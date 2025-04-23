@@ -1,0 +1,332 @@
+---
+title: "Data types demo"
+author: "Wing-Ho Ko"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Loading packages
+
+```{r}
+library(readr)
+library(dplyr)
+library(stringr)
+library(forcats)
+library(lubridate)
+library(nycflights23)
+```
+
+### COnversion between data types
+
+```{r}
+glimpse(flights)
+```
+
+Example: convert hour and minute into integer
+
+```{r}
+flights_mod <- mutate(flights, hour=as.integer(hour), minute=as.integer(minute))
+glimpse(flights_mod)
+```
+
+Example: Make origin a factor column instead of a character column
+
+```{r}
+flights_mod <- mutate(flights_mod, origin = as.factor(origin))
+glimpse(flights_mod)
+```
+
+### String processing via `stringr`
+
+Convert strings to lower case and then back
+
+```{r}
+flights_mod <- mutate(flights_mod, dest = str_to_lower(dest))
+glimpse(flights_mod)
+```
+
+```{r}
+flights_mod <- mutate(flights_mod, dest = str_to_upper(dest))
+glimpse(flights_mod)
+```
+
+Combine origin and destination via `str_c()`
+
+```{r}
+flights_mod <- mutate(flights_mod, trip = str_c(origin, "-", dest))
+glimpse(flights_mod)
+```
+
+String interpolation via `str_glue()`
+
+```{r}
+flights_mod <- mutate(
+  flights_mod, 
+  trip_verbose = str_glue("from {origin} to {dest}")
+)
+glimpse(flights_mod)
+```
+
+String subsetting via `str_sub()`
+
+```{r}
+flights_mod <- mutate(flights_mod, trip_start = str_sub(trip, 1, 3))
+glimpse(flights_mod)
+```
+
+String replacement via `str_replace()`:
+
+```{r}
+flights_mod <- mutate(
+  flights_mod, 
+  trip_start = str_replace(trip_start, fixed("EWR"), "Newark")
+)
+glimpse(flights_mod)
+```
+
+### Factors processing
+
+Glimpse at the `gss_cat` dataset included with forcats
+
+```{r}
+glimpse(gss_cat)
+```
+
+Focus on religious affiliation (relig). Obtain the list of levels using `levels()`
+
+```{r}
+levels(gss_cat$relig)
+```
+
+Use `summary()` to obtain the count for each level
+
+```{r}
+summary(gss_cat$relig)
+```
+
+Combine the "No answer", "Not applicable", and "Don't know" levels to a single "NA" level
+
+```{r}
+relig_re <- fct_recode(
+  gss_cat$relig,
+  "NA" = "No answer",
+  "NA" = "Not applicable",
+  "NA" = "Don't know"
+)
+```
+
+```{r}
+summary(relig_re)
+```
+
+Combine groups with fewer than 50 people into other
+
+```{r}
+relig_re <- fct_lump_min(relig_re, 50)
+```
+
+```{r}
+summary(relig_re)
+```
+
+Retain only the top 10 groups, put the rest into the "Other" category
+
+```{r}
+relig_re <- fct_lump_n(relig_re, 10)
+```
+
+```{r}
+summary(relig_re)
+```
+
+Reorder groups by decreasing number of respondents
+
+```{r}
+relig_re <- fct_infreq(relig_re)
+```
+
+```{r}
+summary(relig_re)
+```
+
+Reorder by alphabetical order
+
+```{r}
+relig_re <- fct_relevel(relig_re, sort)
+```
+
+```{r}
+summary(relig_re)
+```
+
+Put "Protestant" before "NA" so that "NA", "None", and "Other" are last
+
+```{r}
+relig_re <- fct_relevel(relig_re, "Protestant", after=6)
+```
+
+```{r}
+summary(relig_re)
+```
+
+### Date and datetime processing via `lubridate`
+
+#### Date processing via `lubridate`
+
+Load the birthday dataset (which is modified from <https://www.kaggle.com/datasets/ulrikthygepedersen/birthdays/data>)
+
+```{r}
+bdays <- read_csv("data/birthdays.csv")
+```
+
+```{r}
+glimpse(bdays)
+```
+
+Use different function to parse the 3 date representations:
+
+```{r}
+bdays_mod <- bdays |> mutate(
+  date_1 = dmy(date_1),
+  date_2 = mdy(date_2),
+  date_3 = ymd(date_3)
+)
+```
+
+```{r}
+glimpse(bdays_mod)
+```
+
+Obtain the birthdays from individual component instead:
+
+```{r}
+bdays_mod <- bdays_mod |> mutate(
+  date_4 = make_date(year, month, day)
+)
+```
+
+```{r}
+glimpse(bdays_mod)
+```
+
+Conversely, extract day of year information from date object:
+
+```{r}
+bdays_mod <- bdays_mod |> mutate(
+  day_of_year = yday(date_4)
+)
+```
+
+```{r}
+tail(bdays_mod)
+```
+
+#### Datetime processing via `lubridate`
+
+Load the `flights` dataset again
+
+```{r}
+glimpse(flights)
+```
+
+Use `make_datetime()` to create a datetime representation
+
+```{r}
+flights_mod <- flights |> mutate(
+  datetime = make_datetime(year, month, day, hour, minute)
+)
+glimpse(flights_mod)
+```
+Alternatively, assemble a datetime string and use `ymd_hm()`:
+
+```{r}
+flights_mod <- flights_mod |> mutate(
+  datetime2 = str_c(year, "-", month, "-", day, " ", hour, ":", minute)
+)
+glimpse(flights_mod)
+```
+
+```{r}
+flights_mod <- flights_mod |> mutate(
+  datetime2 = ymd_hm(datetime2)
+)
+glimpse(flights_mod)
+```
+
+Extract the day of year information:
+
+```{r}
+flights_mod <- flights_mod |> mutate(
+  day_of_year = yday(datetime)
+)
+glimpse(flights_mod)
+```
+
+Check that different days of year are present
+
+```{r}
+flights_mod |> select(day_of_year) |> distinct()
+```
+
+#### Datetime arithmetic
+
+Construct time difference
+
+```{r}
+tdiff <- as.Date("2025-01-05") - as.Date("2024-06-30")
+print(tdiff)
+```
+
+Get the time difference as number of days
+
+```{r}
+tdiff / ddays(1)
+```
+
+Add the time difference to the later date
+
+```{r}
+as.Date("2025-01-05") + as.duration(tdiff)
+```
+
+Repeat the above, but with 2 times the duration
+
+```{r}
+as.Date("2025-01-05") + as.duration(tdiff) * 2
+```
+
+#### Timezone
+
+List the names of different timezones:
+
+```{r}
+tail(OlsonNames(), 20)
+```
+
+Set the timezone using tz argument
+
+```{r}
+t1 <- as.POSIXct("2014-05-16 3:24:00", tz="US/Pacific")
+t2 <- as.POSIXct("2014-05-16 3:24:00", tz="US/Eastern")
+```
+
+Time difference works as intended:
+
+```{r}
+t1 - t2
+```
+
+Convert t2 to Pacific time
+
+```{r}
+with_tz(t2, tzone = "US/Pacific")
+```
+
+Force the timezone of a datetime (changing the timezone without changing the nominal datetime value)
+
+```{r}
+force_tz(t2, tzone = "US/Pacific")
+```

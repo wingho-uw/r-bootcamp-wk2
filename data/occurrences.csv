@@ -1,0 +1,357 @@
+sex,lifeStage,scientificName,n
+female,adult,Acartia hudsonica,609
+female,adult,Acartia longiremis,913
+female,adult,Acartia tonsa,1
+female,adult,Bradyidius saanichi,76
+female,adult,Calanus marshallae,479
+female,adult,Calanus pacificus,1380
+female,adult,Candacia bipinnata,7
+female,adult,Candacia columbiae,258
+female,adult,Centropages abdominalis,357
+female,adult,Chiridius gracilis,140
+female,adult,Ctenocalanus vanus,1
+female,adult,Ditrichocorycaeus anglicus,1727
+female,adult,Epilabidocera longipedata,476
+female,adult,Eucalanus bungii,381
+female,adult,Eucalanus californicus,4
+female,adult,Eucalanus hyalinus,1
+female,adult,Euchirella pseudopulchra,2
+female,adult,Euchirella pulchra,9
+female,adult,Euphausia pacifica,1
+female,adult,Gaetanus miles,1
+female,adult,Gaetanus minutus,1
+female,adult,Gaetanus pungens,1
+female,adult,Gaetanus simplex,3
+female,adult,Gaidius tenuispinus,3
+female,adult,Heterorhabdus tanneri,3
+female,adult,Mesocalanus tenuicornis,3
+female,adult,Meterythrops robustus,2
+female,adult,Metridia pacifica,1205
+female,adult,Monothula subtilis,30
+female,adult,Neocalanus cristatus,5
+female,adult,Neocalanus plumchrus,8
+female,adult,Oithona atlantica,571
+female,adult,Oithona similis,1774
+female,adult,Oncaea prolata,8
+female,adult,Pacifacanthomysis nephrophthalma,1
+female,adult,Paraeuchaeta elongata,211
+female,adult,Pasiphaea pacifica,2
+female,adult,Pseudocalanus mimus,380
+female,adult,Pseudocalanus minutus,90
+female,adult,Pseudocalanus moultoni,1313
+female,adult,Pseudocalanus newmani,1345
+female,adult,Racovitzanus antarcticus,40
+female,adult,Scaphocalanus brevicornis,5
+female,adult,Scaphocalanus echinatus,3
+female,adult,Scolecithricella dentata,2
+female,adult,Scolecithricella minor,221
+female,adult,Scolecithricella ovata,3
+female,adult,Spinocalanus brevicaudatus,1
+female,adult,Tharybis fultoni,29
+female,adult,Themisto pacifica,1
+female,adult,Tortanus discaudatus,337
+female,adult,Triconia borealis,522
+female,adult,Triconia canadensis,10
+female,adult,Triconia conifera,104
+female,adult,Triconia minuta,292
+female,adult,Triconia similis,5
+female,adult,Xantharus cryeri,1
+indeterminate,adult,Epilabidocera longipedata,5
+indeterminate,adult,Euphausia pacifica,335
+indeterminate,adult,Nematoscelis difficilis,1
+indeterminate,adult,Paraeuchaeta elongata,1
+indeterminate,adult,Themisto pacifica,1
+indeterminate,adult,Thysanoessa longipes,4
+indeterminate,adult,Thysanoessa raschii,89
+indeterminate,adult,Thysanoessa spinifera,14
+indeterminate,adult,Tortanus discaudatus,1
+indeterminate,bract,Muggiaea atlantica,1352
+indeterminate,bract,Nanomia bijuga,213
+indeterminate,calyptopis,Euphausia pacifica,1
+indeterminate,calyptopis Cal1,Euphausia pacifica,1083
+indeterminate,calyptopis Cal1,Thysanoessa raschii,64
+indeterminate,calyptopis Cal1,Thysanoessa spinifera,10
+indeterminate,calyptopis Cal2,Euphausia pacifica,836
+indeterminate,calyptopis Cal2,Thysanoessa longipes,1
+indeterminate,calyptopis Cal2,Thysanoessa raschii,80
+indeterminate,calyptopis Cal2,Thysanoessa spinifera,12
+indeterminate,calyptopis Cal3,Euphausia pacifica,714
+indeterminate,calyptopis Cal3,Thysanoessa longipes,1
+indeterminate,calyptopis Cal3,Thysanoessa raschii,113
+indeterminate,calyptopis Cal3,Thysanoessa spinifera,24
+indeterminate,copepodites,Acartia hudsonica,517
+indeterminate,copepodites,Acartia longiremis,486
+indeterminate,copepodites,Acartia tonsa,2
+indeterminate,copepodites,Bradyidius saanichi,150
+indeterminate,copepodites,Candacia bipinnata,2
+indeterminate,copepodites,Candacia columbiae,185
+indeterminate,copepodites,Centropages abdominalis,541
+indeterminate,copepodites,Chiridius gracilis,166
+indeterminate,copepodites,Ditrichocorycaeus anglicus,1683
+indeterminate,copepodites,Epilabidocera longipedata,319
+indeterminate,copepodites,Eucalanus bungii,106
+indeterminate,copepodites,Euchirella pulchra,3
+indeterminate,copepodites,Gaetanus minutus,1
+indeterminate,copepodites,Gaetanus pungens,6
+indeterminate,copepodites,Gaetanus simplex,2
+indeterminate,copepodites,Gaidius pungens,1
+indeterminate,copepodites,Gaidius tenuispinus,2
+indeterminate,copepodites,Heterorhabdus tanneri,3
+indeterminate,copepodites,Mesocalanus tenuicornis,1
+indeterminate,copepodites,Metridia pacifica,6
+indeterminate,copepodites,Monothula subtilis,4
+indeterminate,copepodites,Neocalanus cristatus,2
+indeterminate,copepodites,Neocalanus plumchrus,32
+indeterminate,copepodites,Oithona atlantica,353
+indeterminate,copepodites,Oithona similis,1486
+indeterminate,copepodites,Paraeuchaeta elongata,77
+indeterminate,copepodites,Pseudocalanus mimus,43
+indeterminate,copepodites,Pseudocalanus minutus,52
+indeterminate,copepodites,Pseudocalanus moultoni,18
+indeterminate,copepodites,Pseudocalanus newmani,14
+indeterminate,copepodites,Racovitzanus antarcticus,6
+indeterminate,copepodites,Scaphocalanus brevicornis,1
+indeterminate,copepodites,Scolecithricella dentata,1
+indeterminate,copepodites,Scolecithricella minor,127
+indeterminate,copepodites,Tharybis fultoni,65
+indeterminate,copepodites,Tortanus discaudatus,271
+indeterminate,copepodites,Triconia borealis,83
+indeterminate,copepodites,Triconia conifera,6
+indeterminate,copepodites,Triconia minuta,92
+indeterminate,copepodites C1,Calanus marshallae,489
+indeterminate,copepodites C1,Calanus pacificus,1135
+indeterminate,copepodites C1,Chiridius gracilis,5
+indeterminate,copepodites C1,Epilabidocera longipedata,13
+indeterminate,copepodites C1,Eucalanus bungii,12
+indeterminate,copepodites C1,Metridia pacifica,606
+indeterminate,copepodites C1,Neocalanus plumchrus,18
+indeterminate,copepodites C1,Paraeuchaeta elongata,10
+indeterminate,copepodites C2,Calanus marshallae,319
+indeterminate,copepodites C2,Calanus pacificus,1095
+indeterminate,copepodites C2,Chiridius gracilis,4
+indeterminate,copepodites C2,Epilabidocera longipedata,13
+indeterminate,copepodites C2,Eucalanus bungii,17
+indeterminate,copepodites C2,Metridia pacifica,628
+indeterminate,copepodites C2,Neocalanus plumchrus,19
+indeterminate,copepodites C2,Paraeuchaeta elongata,12
+indeterminate,copepodites C3,Calanus marshallae,156
+indeterminate,copepodites C3,Calanus pacificus,1191
+indeterminate,copepodites C3,Chiridius gracilis,5
+indeterminate,copepodites C3,Epilabidocera longipedata,10
+indeterminate,copepodites C3,Eucalanus bungii,25
+indeterminate,copepodites C3,Metridia pacifica,669
+indeterminate,copepodites C3,Neocalanus plumchrus,19
+indeterminate,copepodites C3,Paraeuchaeta elongata,17
+indeterminate,copepodites C4,Calanus marshallae,165
+indeterminate,copepodites C4,Calanus pacificus,1303
+indeterminate,copepodites C4,Chiridius gracilis,3
+indeterminate,copepodites C4,Epilabidocera longipedata,6
+indeterminate,copepodites C4,Eucalanus bungii,29
+indeterminate,copepodites C4,Metridia pacifica,703
+indeterminate,copepodites C4,Neocalanus cristatus,4
+indeterminate,copepodites C4,Neocalanus plumchrus,62
+indeterminate,copepodites C4,Paraeuchaeta elongata,35
+indeterminate,copepodites C5,Calanus marshallae,577
+indeterminate,copepodites C5,Calanus pacificus,1586
+indeterminate,copepodites C5,Centropages abdominalis,6
+indeterminate,copepodites C5,Chiridius gracilis,17
+indeterminate,copepodites C5,Epilabidocera longipedata,119
+indeterminate,copepodites C5,Eucalanus bungii,203
+indeterminate,copepodites C5,Eucalanus californicus,1
+indeterminate,copepodites C5,Gaetanus pungens,1
+indeterminate,copepodites C5,Gaetanus simplex,1
+indeterminate,copepodites C5,Metridia pacifica,873
+indeterminate,copepodites C5,Neocalanus cristatus,120
+indeterminate,copepodites C5,Neocalanus plumchrus,347
+indeterminate,copepodites C5,Paraeuchaeta elongata,254
+indeterminate,copepodites C5,Pseudocalanus mimus,86
+indeterminate,copepodites C5,Pseudocalanus minutus,143
+indeterminate,copepodites C5,Racovitzanus antarcticus,5
+indeterminate,copepodites C5,Scolecithricella minor,6
+indeterminate,copepodites C5,Tharybis fultoni,1
+indeterminate,cydippid larva,Pleurobrachia bachei,33
+indeterminate,eudoxid,Muggiaea atlantica,649
+indeterminate,furcilia,Euphausia pacifica,11
+indeterminate,furcilia,Thysanoessa raschii,1
+indeterminate,furcilia F1,Euphausia pacifica,1003
+indeterminate,furcilia F1,Thysanoessa raschii,374
+indeterminate,furcilia F1,Thysanoessa spinifera,72
+indeterminate,furcilia F2,Euphausia pacifica,855
+indeterminate,furcilia F2,Thysanoessa longipes,1
+indeterminate,furcilia F2,Thysanoessa raschii,296
+indeterminate,furcilia F2,Thysanoessa spinifera,41
+indeterminate,furcilia F3,Euphausia pacifica,696
+indeterminate,furcilia F3,Thysanoessa longipes,2
+indeterminate,furcilia F3,Thysanoessa raschii,200
+indeterminate,furcilia F3,Thysanoessa spinifera,51
+indeterminate,furcilia F4,Euphausia pacifica,377
+indeterminate,furcilia F4,Thysanoessa longipes,1
+indeterminate,furcilia F4,Thysanoessa raschii,95
+indeterminate,furcilia F4,Thysanoessa spinifera,26
+indeterminate,furcilia F5,Euphausia pacifica,200
+indeterminate,furcilia F5,Thysanoessa raschii,53
+indeterminate,furcilia F5,Thysanoessa spinifera,14
+indeterminate,furcilia F6,Euphausia pacifica,256
+indeterminate,furcilia F6,Thysanoessa longipes,1
+indeterminate,furcilia F6,Thysanoessa raschii,39
+indeterminate,furcilia F6,Thysanoessa spinifera,8
+indeterminate,furcilia F7,Euphausia pacifica,256
+indeterminate,furcilia F7,Thysanoessa raschii,32
+indeterminate,furcilia F7,Thysanoessa spinifera,2
+indeterminate,furcilia F8,Thysanoessa raschii,18
+indeterminate,furcilia F8,Thysanoessa spinifera,4
+indeterminate,furcilia F9,Thysanoessa raschii,14
+indeterminate,furcilia F9,Thysanoessa spinifera,4
+indeterminate,gonophore,Muggiaea atlantica,1686
+indeterminate,gut,Pleurobrachia bachei,629
+indeterminate,indeterminate,Alienacanthomysis macropsis,204
+indeterminate,indeterminate,Calliopius carinatus,3
+indeterminate,indeterminate,Calliopius pacificus,434
+indeterminate,indeterminate,Clione limacina,197
+indeterminate,indeterminate,Cyphocaris challengeri,1757
+indeterminate,indeterminate,Eusergestes similis,5
+indeterminate,indeterminate,Gastropteron pacificum,110
+indeterminate,indeterminate,Limacina helicina,1441
+indeterminate,indeterminate,Meterythrops robustus,34
+indeterminate,indeterminate,Mysidella americana,2
+indeterminate,indeterminate,Neotrypaea californiensis,1880
+indeterminate,indeterminate,Pacifacanthomysis nephrophthalma,220
+indeterminate,indeterminate,Pandalus stenolepis,113
+indeterminate,indeterminate,Paraphronima crassipes,1
+indeterminate,indeterminate,Pasiphaea pacifica,573
+indeterminate,indeterminate,Pleurobrachia bachei,300
+indeterminate,indeterminate,Primno macropa,89
+indeterminate,indeterminate,Rhynchonereella angelini,26
+indeterminate,indeterminate,Themisto pacifica,3036
+indeterminate,indeterminate,Xenacanthomysis pseudomacropsis,117
+indeterminate,juvenile,Euphausia pacifica,520
+indeterminate,juvenile,Nematoscelis difficilis,2
+indeterminate,juvenile,Pasiphaea pacifica,2
+indeterminate,juvenile,Thysanoessa inspinata,1
+indeterminate,juvenile,Thysanoessa longipes,1
+indeterminate,juvenile,Thysanoessa raschii,44
+indeterminate,juvenile,Thysanoessa spinifera,10
+indeterminate,medusae,Aegina citrea,17
+indeterminate,medusae,Aequorea victoria,391
+indeterminate,medusae,Aglantha digitale,1447
+indeterminate,medusae,Clytia gregaria,940
+indeterminate,medusae,Eutonina indicans,130
+indeterminate,medusae,Geomackiea zephyrolata,23
+indeterminate,medusae,Melicertum octocostatum,8
+indeterminate,medusae,Mitrocoma cellularia,157
+indeterminate,medusae,Proboscidactyla flavicirrata,557
+indeterminate,medusae,Ptychogena lactea,2
+indeterminate,medusae,Stomotoca atra,13
+indeterminate,megalopae,Cancer productus,122
+indeterminate,megalopae,Fabia subquadrata,127
+indeterminate,megalopae,Glebocarcinus oregonensis,292
+indeterminate,megalopae,Lophopanopeus bellus,371
+indeterminate,megalopae,Metacarcinus gracilis,354
+indeterminate,megalopae,Metacarcinus magister,147
+indeterminate,megalopae,Munida quadrispina,1
+indeterminate,megalopae,Oregonia gracilis,145
+indeterminate,megalopae,Telmessus cheiragonus,4
+indeterminate,metanauplii,Euphausia pacifica,99
+indeterminate,metanauplii,Thysanoessa raschii,3
+indeterminate,nauplii N1,Euphausia pacifica,55
+indeterminate,nauplii N2,Euphausia pacifica,60
+indeterminate,nauplii N2,Thysanoessa raschii,1
+indeterminate,nectophore,Muggiaea atlantica,1598
+indeterminate,planula,Muggiaea atlantica,1
+indeterminate,pneumatophore,Nanomia bijuga,186
+indeterminate,whole,Pleurobrachia bachei,286
+indeterminate,zoeae,Emerita analoga,1
+indeterminate,zoeae,Fabia subquadrata,2
+indeterminate,zoeae,Lophopanopeus bellus,2
+indeterminate,zoeae,Metacarcinus gracilis,1
+indeterminate,zoeae,Metacarcinus magister,1
+indeterminate,zoeae,Oregonia gracilis,1
+indeterminate,zoeae Z1,Cancer productus,490
+indeterminate,zoeae Z1,Fabia subquadrata,915
+indeterminate,zoeae Z1,Glebocarcinus oregonensis,257
+indeterminate,zoeae Z1,Lophopanopeus bellus,709
+indeterminate,zoeae Z1,Metacarcinus gracilis,352
+indeterminate,zoeae Z1,Metacarcinus magister,392
+indeterminate,zoeae Z1,Oregonia gracilis,80
+indeterminate,zoeae Z1,Telmessus cheiragonus,17
+indeterminate,zoeae Z2,Cancer productus,239
+indeterminate,zoeae Z2,Fabia subquadrata,434
+indeterminate,zoeae Z2,Glebocarcinus oregonensis,193
+indeterminate,zoeae Z2,Lophopanopeus bellus,386
+indeterminate,zoeae Z2,Metacarcinus gracilis,197
+indeterminate,zoeae Z2,Metacarcinus magister,138
+indeterminate,zoeae Z2,Oregonia gracilis,56
+indeterminate,zoeae Z2,Telmessus cheiragonus,2
+indeterminate,zoeae Z3,Cancer productus,97
+indeterminate,zoeae Z3,Emerita analoga,1
+indeterminate,zoeae Z3,Fabia subquadrata,240
+indeterminate,zoeae Z3,Glebocarcinus oregonensis,158
+indeterminate,zoeae Z3,Lophopanopeus bellus,340
+indeterminate,zoeae Z3,Metacarcinus gracilis,195
+indeterminate,zoeae Z3,Metacarcinus magister,38
+indeterminate,zoeae Z3,Telmessus cheiragonus,2
+indeterminate,zoeae Z4,Cancer productus,73
+indeterminate,zoeae Z4,Emerita analoga,1
+indeterminate,zoeae Z4,Fabia subquadrata,354
+indeterminate,zoeae Z4,Glebocarcinus oregonensis,159
+indeterminate,zoeae Z4,Lophopanopeus bellus,444
+indeterminate,zoeae Z4,Metacarcinus gracilis,232
+indeterminate,zoeae Z4,Metacarcinus magister,63
+indeterminate,zoeae Z4,Orthopagurus schmitti,1
+indeterminate,zoeae Z4,Telmessus cheiragonus,20
+indeterminate,zoeae Z5,Cancer productus,85
+indeterminate,zoeae Z5,Emerita analoga,1
+indeterminate,zoeae Z5,Fabia subquadrata,551
+indeterminate,zoeae Z5,Glebocarcinus oregonensis,230
+indeterminate,zoeae Z5,Metacarcinus gracilis,225
+indeterminate,zoeae Z5,Metacarcinus magister,112
+indeterminate,zoeae Z5,Telmessus cheiragonus,26
+male,adult,Acartia hudsonica,422
+male,adult,Acartia longiremis,520
+male,adult,Acartia tonsa,3
+male,adult,Bradyidius saanichi,41
+male,adult,Calanus marshallae,176
+male,adult,Calanus pacificus,1126
+male,adult,Candacia bipinnata,4
+male,adult,Candacia columbiae,134
+male,adult,Centropages abdominalis,225
+male,adult,Chiridius gracilis,22
+male,adult,Ctenocalanus vanus,2
+male,adult,Ditrichocorycaeus anglicus,1761
+male,adult,Epilabidocera longipedata,427
+male,adult,Eucalanus bungii,122
+male,adult,Eucalanus californicus,1
+male,adult,Euchirella pulchra,1
+male,adult,Euphausia pacifica,1
+male,adult,Gaetanus miles,1
+male,adult,Gaetanus minutus,1
+male,adult,Gaetanus pungens,1
+male,adult,Gaidius tenuispinus,1
+male,adult,Heterorhabdus tanneri,1
+male,adult,Meterythrops robustus,2
+male,adult,Metridia pacifica,996
+male,adult,Monothula subtilis,14
+male,adult,Neocalanus cristatus,8
+male,adult,Neocalanus plumchrus,6
+male,adult,Oithona atlantica,41
+male,adult,Oithona similis,1363
+male,adult,Oncaea prolata,1
+male,adult,Pacifacanthomysis nephrophthalma,3
+male,adult,Paraeuchaeta elongata,84
+male,adult,Pseudocalanus mimus,8
+male,adult,Pseudocalanus minutus,2
+male,adult,Pseudocalanus moultoni,2
+male,adult,Pseudocalanus newmani,4
+male,adult,Racovitzanus antarcticus,5
+male,adult,Scaphocalanus brevicornis,2
+male,adult,Scaphocalanus echinatus,1
+male,adult,Scolecithricella minor,51
+male,adult,Scolecithricella ovata,2
+male,adult,Tharybis fultoni,15
+male,adult,Tortanus discaudatus,337
+male,adult,Triconia borealis,170
+male,adult,Triconia canadensis,1
+male,adult,Triconia conifera,39
+male,adult,Triconia minuta,105
+male,adult,Triconia similis,3
+male,adult,Xantharus cryeri,1

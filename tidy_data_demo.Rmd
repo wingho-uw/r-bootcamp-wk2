@@ -1,0 +1,192 @@
+---
+title: "Tidy data demo"
+author: "Wing-Ho Ko"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Load packages
+
+```{r}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(janitor)
+library(palmerpenguins)
+library(nycflights23)
+```
+
+### cleaning up "bad" column names
+
+Read a file with bad column names
+
+```{r}
+bad_names <- read_csv("data/bad_col_names.csv", name_repair="minimal")
+glimpse(bad_names)
+```
+
+Clean up column names using `clean_names()` from `janitor`
+
+```{r}
+repaired_names <- bad_names |> clean_names()
+glimpse(repaired_names)
+```
+
+### Dealing with missing values
+
+#### Encode missing values when loading data
+
+Download the Karachi, Pakistan sea level data from <https://psmsl.org/data/obtaining/stations/204.php>. The data encode missing values as -99999 and is a semicolon-separated file
+
+```{r}
+read_delim(
+  "https://psmsl.org/data/obtaining/rlr.annual.data/204.rlrdata", delim=";",
+  col_names = c("decimal_year", "depth_mm", "missing_days", "quality_flag"),
+  na=c("", "NA", "-99999")
+) |> mutate(
+  decimal_year = as.numeric(decimal_year), 
+  depth_mm = as.numeric(depth_mm)
+)
+```
+
+#### Handle missing data
+
+Load a simplified version of the weather data from `nycflights23`
+
+```{r}
+weather_sim <- weather |> select(origin, year:hour, wind_speed, temp, pressure)
+```
+
+Check the number of NA's for each row using `summary()`:
+
+```{r}
+weather_sim |> summary()
+```
+
+Remove any observations that have NA's in them
+
+```{r}
+weather_notna <- drop_na(weather)
+```
+
+Count the number of rows removed, and note that it is bigger than the number of NA's in any individual columns
+
+```{r}
+nrow(weather) - nrow(weather_notna)
+```
+
+Remove only the rows where temperature is NA:
+
+```{r}
+weather_temp = drop_na(weather_sim, temp)
+```
+
+Check for missing values in the data that remains
+
+```{r}
+weather_temp|> summary()
+```
+
+Construct a dataframe consisting only of entries for which wind speed **is missing**:
+
+```{r}
+weather_isna = weather_sim |> filter(is.na(wind_speed))
+head(weather_isna)
+```
+
+#### Complete implicit data
+
+Load the Ballard Locks salmon count data
+
+```{r}
+salmons <- read_csv("data/Ballard_salmon_counts.csv")
+```
+
+```{r}
+salmons
+```
+
+Fill in missing months
+
+```{r}
+salmons_filled <- salmons |> complete(year, month=seq(1, 12)) 
+```
+
+```{r}
+salmons_filled
+```
+
+### data tidying
+
+#### Convert a wide table to a long and tidy table
+
+Inspect the `billboard` dataframe that comes with `tidyr`, which is a wide table that encode billboard ranks in the columns wk1, ..., wk76
+
+```{r}
+billboard
+```
+
+Pivot the wide table into long table:
+
+```{r}
+pivot_longer(billboard, wk1:wk76, names_to = "week", values_to = "rank") 
+```
+
+A bit more processing: remove the prefix "wk" from the "week" values, and convert into integer
+
+```{r}
+pivot_longer(
+  billboard, wk1:wk76, 
+  names_to = "week", names_prefix = "wk",
+  values_to = "rank"
+) |> mutate(week = as.integer(week))
+```
+
+#### Convert crammed column to tidy columns
+
+Import a summarized occurrence table
+
+```{r}
+occurrences <- read_csv("data/occurrences.csv")
+```
+
+```{r}
+head(occurrences)
+```
+
+Separate scientific names into genus and species
+
+```{r}
+separate_wider_delim(
+  occurrences, scientificName, " ", names=c("genus", "species")
+)
+```
+
+#### convert an entity-attribute-value table into wider tidy table
+
+Load the `economics_long` table (which originates from `ggplot2`)
+
+```{r}
+economics_long <- read_csv("data/economics_long.csv")
+```
+
+```{r}
+glimpse(economics_long)
+```
+
+Check the collection of measurements
+
+```{r}
+economics_long |> distinct(variable)
+```
+
+Pivot into a wider tidy table
+
+```{r}
+economics <- pivot_wider(economics_long, id_cols="date", names_from=variable, values_from=value)
+
+head(economics)
+```

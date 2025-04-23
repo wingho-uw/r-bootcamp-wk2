@@ -1,0 +1,84 @@
+---
+title: "More dplyr demo"
+author: "Wing-Ho Ko"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load the packages we'll need
+
+```{r}
+library(dplyr)
+library(car)
+library(nycflights23)
+```
+
+### Summary statistics
+
+Keep a simpler dataframe for the summary statistics examples below
+
+```{r}
+flights_sim <- flights |> 
+  select(carrier:flight | origin:dest | dep_delay | arr_delay)
+```
+
+Calculate basic summary statistics using `summary()`
+
+```{r}
+summary(flights_sim)
+```
+
+Calculate the average departure delay directly. Notice that in this case NA propagates....
+
+```{r}
+mean(flights_sim$dep_delay)
+```
+
+To omit NA's, add the named argument `na.rm=TRUE`
+
+```{r}
+mean(flights_sim$dep_delay, na.rm=TRUE)
+```
+
+Similarly, to obtain standard deviation we may do (note that R computes the standard deviation that derives from the unbiased point estimator for variance):
+
+```{r}
+sd(flights_sim$dep_delay, na.rm=TRUE)
+```
+
+For median, use `median()` instead of `mean()`
+
+```{r}
+median(flights_sim$dep_delay, na.rm=TRUE)
+```
+
+More generally, use `quantile()` for quantiles:
+
+```{r}
+quantile(flights_sim$dep_delay, 0.25, na.rm=TRUE)
+```
+
+We can bundle multiple calculations of summary statistics using `summarize()`
+
+```{r}
+flights_sim |> summarise(
+  mean_delay = mean(dep_delay, na.rm=TRUE),
+  sd_delay = sd(dep_delay, na.rm=TRUE)
+)
+```
+
+### Grouped summary statistics
+
+Calculate the monthly average in departure delay
+
+```{r}
+grouped <- flights |> group_by(year, month) |>
+  summarize(
+    dep_mean = mean(dep_delay, na.rm=TRUE),
+    dep_sd = sd(dep_delay, na.rm=TRUE),
+  ) |> ungroup()
+grouped
+```

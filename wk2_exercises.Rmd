@@ -1,0 +1,83 @@
+---
+title: "Week 2 exercises"
+author: "Wing-Ho Ko"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Loading common packages
+
+```{r}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(forcats)
+library(lubridate)
+library(palmerpenguins)
+```
+
+### Exercise 1
+
+Work with the `penguins` dataset. 
+
+1. Obtain the summary statistics on bill length, flipper length, and body mass. Also count the occurrences of the two sexes
+
+2. For each unique combination of species and residing island of penguins, find the mean and standard deviation of body mass.
+
+### Exercise 2
+
+Again work with the `penguins` dataset
+
+1. There are two records of penguins with measurement (e.g., body mass) missing. Which combination of species and island are these penguins from?
+
+2. There are additional records where the sex of the penguins are missing. Remove these records and re-compute the means for bill length, flipper length, and body mass.
+
+3. Count the number of penguins for each unique combination of species and island (note that some unique combinations are missing in the records)
+
+(Hint: once grouped, you can use count() to count the number of entries)
+
+### Exercise 3
+
+We'll work with a subset of data from the World Health Organization Global Tuberculosis Report, which is included in `tidyr` under the variable name `who2`
+
+```{r}
+glimpse(who2)
+```
+
+Besides "country" and "year", the columns represent different diagnostic code, and the cell corresponds to the count of people who are diagnosed. The diagnostic code consists of 3 separate section separated by underscore `_`:
+
+ + the method of diagnosis (`rel` = relapse, `sn` = negative pulmonary smear, `sp` = positive pulmonary smear, `ep` = extrapulmonary),
+
+ + gender (`f` = female, `m` = male), and
+
+ + age group (`014` = 0-14 yrs of age, `1524` = 15-24, `2534` = 25-34, `3544` = 35-44 years of age, `4554` = 45-54, `5564` = 55-64, `65` = 65 years or older).
+
+1. Convert the wide table into long table format. Call the column of diagnostic code "code" and the column of value "count". Call the result `who2_long`. 
+
+2. Split the code into three columns "diagnosis", "gender", and "age_group". Call the result who2_tidy
+
+### Exercise 4
+
+1 . Start with the penguins dataset. Create a new column called "category" that combines the species and island information using a hyphen. Call the resulting dataframe `penguin_plus`
+
+2. Convert "category" from a character column to a factor column. Add new categories that corresponds to possible combinations with no samples. Sort the levels alphabetically. Call the resulting dataframe `penguins_fct`
+
+3. Reorder the levels of "category" by decreasing frequency. Verify your result using `summary()`. Keep calling the resulting dataframe `penguins_fct`
+
+4. Combine the 4 levels in "category" that has no members into a single category called "other". Call your resulting dataframe `penguins_comb`
+
+### Exercise 5
+
+1. Load the "WA_coastal_flood.csv" file in the data folder. This is a record of coastal flood observed in the Washington state up till 2024. Call the resulting dataframe `coastal_flood`.
+
+2. Create a new column called `begin_datetime` that records the start date and time of the flood as a POSIXct column. Similarly create a new column called `end_datetime`. Call your resulting dataframe `coastal_flood2`
+
+(Hint: you can obtain the hour and minute of flood beginnings by applying `%/% 100` and `%% 100` on the `BEGIN_TIME` column. Similar trick will work for flood endtimes too)
+
+3. Create a new column `duration` that records the duration of flood. Use hours as its unit and allow fractional values. Call the resulting dataframe `coastal_flood3`
+
+4. Run summary statistics on the flood duration
