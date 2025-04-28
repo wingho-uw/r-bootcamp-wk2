@@ -25,6 +25,10 @@ flights_sim <- flights |>
   select(carrier:flight | origin:dest | dep_delay | arr_delay)
 ```
 
+```{r}
+glimpse(flights_sim)
+```
+
 Calculate basic summary statistics using `summary()`
 
 ```{r}
@@ -40,13 +44,15 @@ mean(flights_sim$dep_delay)
 To omit NA's, add the named argument `na.rm=TRUE`
 
 ```{r}
-mean(flights_sim$dep_delay, na.rm=TRUE)
+delay_mean <- mean(flights_sim$dep_delay, na.rm=TRUE)
+print(delay_mean)
 ```
 
 Similarly, to obtain standard deviation we may do (note that R computes the standard deviation that derives from the unbiased point estimator for variance):
 
 ```{r}
-sd(flights_sim$dep_delay, na.rm=TRUE)
+delay_sd <- sd(flights_sim$dep_delay, na.rm=TRUE)
+print(delay_sd)
 ```
 
 For median, use `median()` instead of `mean()`

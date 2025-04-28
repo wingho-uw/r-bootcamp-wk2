@@ -19,7 +19,7 @@ library(lubridate)
 library(nycflights23)
 ```
 
-### COnversion between data types
+### Conversion between data types
 
 ```{r}
 glimpse(flights)
@@ -38,6 +38,11 @@ Example: Make origin a factor column instead of a character column
 flights_mod <- mutate(flights_mod, origin = as.factor(origin))
 glimpse(flights_mod)
 ```
+
+```{r}
+flights_mod$origin
+```
+
 
 ### String processing via `stringr`
 
@@ -277,6 +282,7 @@ Construct time difference
 
 ```{r}
 tdiff <- as.Date("2025-01-05") - as.Date("2024-06-30")
+tdiff <- as.duration(tdiff)
 print(tdiff)
 ```
 
@@ -289,16 +295,23 @@ tdiff / ddays(1)
 Add the time difference to the later date
 
 ```{r}
-as.Date("2025-01-05") + as.duration(tdiff)
+as.Date("2025-01-05") + tdiff
 ```
 
 Repeat the above, but with 2 times the duration
 
 ```{r}
-as.Date("2025-01-05") + as.duration(tdiff) * 2
+as.Date("2025-01-05") + tdiff * 2
 ```
 
 #### Timezone
+
+
+Note that `POSIXct` is timezone aware by default
+
+```{r}
+as.POSIXct("2014-05-16 3:24:00")
+```
 
 List the names of different timezones:
 

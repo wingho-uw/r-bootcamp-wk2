@@ -70,6 +70,7 @@ Remove any observations that have NA's in them
 
 ```{r}
 weather_notna <- drop_na(weather)
+summary(weather_notna)
 ```
 
 Count the number of rows removed, and note that it is bigger than the number of NA's in any individual columns
@@ -82,6 +83,7 @@ Remove only the rows where temperature is NA:
 
 ```{r}
 weather_temp = drop_na(weather_sim, temp)
+summary(weather_temp)
 ```
 
 Check for missing values in the data that remains
@@ -190,3 +192,5 @@ economics <- pivot_wider(economics_long, id_cols="date", names_from=variable, va
 
 head(economics)
 ```
+
+
