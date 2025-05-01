@@ -229,6 +229,51 @@ bdays_mod <- bdays_mod |> mutate(
 tail(bdays_mod)
 ```
 
+#### Row operations based on a date column
+
+Reload the birthday dataset and parse date
+
+```{r}
+bdays <- read_csv("data/birthdays.csv")
+```
+
+```{r}
+bdays_mod <- bdays |> mutate(
+  date_1 = dmy(date_1),
+  date_2 = mdy(date_2),
+  date_3 = ymd(date_3)
+)
+```
+
+Suppose the dataset is initially badly sorted:
+
+```{r}
+bdays_bad <- bdays_mod |> arrange(month_short)
+bdays_bad
+```
+
+We can easily sort the dataset by date:
+
+```{r}
+bdays_bad |> arrange(date_1)
+```
+
+We can also first sort by calendar month, **before** sorting by date:
+
+```{r}
+bdays_bad |> arrange(month(date_1), date_1)
+```
+
+Similarly, we can filter data using date as criteria
+
+```{r}
+bdays_bad |> filter(
+  month(date_1) == 5, 
+  mday(date_1) == 1, 
+  date_1 < as.Date("2010-01-01")
+)
+```
+
 #### Datetime processing via `lubridate`
 
 Load the `flights` dataset again
